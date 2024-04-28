@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: gray;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.home_top_container {
+    height: 500px;
+    padding: 50px 0;
+    background-color: #5302a8;
+}
+
+.home_bottom_container {
+    min-height: 600px;
+    height: auto;
+    padding: 0 0 50px 0;
+}
+
+.slight_up {
+    display: flex;
+    position: relative;
+    top: -150px;
+    overflow-x: auto;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.container {
+    background: #008000;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.small_box {
+    width: 20%;
+    height: 40px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.venue_container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 400px;
+    /* background-color: red; */
+}
+
+.footer {
+    min-width: 100vw;
+    text-align: center;
+    color: #fff;
+    background-color: #282828;
+    padding: 10px 0;
+    bottom: 0;
+}
+
+
+@media screen and (max-width: 500px) {
+    .small_box {
+        width: 30%;
+    }
+    .container {
+        width: 95% !important;
+    }
+}
