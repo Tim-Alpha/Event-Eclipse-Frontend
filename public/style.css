@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
     background-color: gray;
+    overflow-x: hidden;
 
     /* Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
@@ -16,15 +16,18 @@ body {
 }
 
 .home_top_container {
+    width: 100vw;
     height: 500px;
     padding: 50px 0;
     background-color: #5302a8;
 }
 
 .home_bottom_container {
+    width: 100vw;
+    margin-left: -8px;
     min-height: 600px;
     height: auto;
-    padding: 0 0 50px 0;
+    padding: 50px 0 50px 0;
 }
 
 .slight_up {
@@ -57,13 +60,14 @@ body {
 }
 
 .venue_container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     min-height: 400px;
     /* background-color: red; */
-}
+}  
 
 .footer {
     min-width: 100vw;
@@ -76,10 +80,20 @@ body {
 
 
 @media screen and (max-width: 500px) {
+
+    .home_top_container {
+        height: 100px;
+    }
+
+    .home_bottom_container {
+        margin: 0px;
+    }
     .small_box {
         width: 30%;
     }
     .container {
-        width: 95% !important;
+        width: 90% !important;
+        max-height: 25vh;
+        border-radius: 5px;
     }
 }

@@ -6,7 +6,7 @@ const getContainerStyles = (props) => {
         height: `${props.height}vh`,
         backgroundColor: props.background,
         borderRadius: `${props.corner}px`,
-        margin: '10px',
+        margin: '10px 0 10px 0',
     };
 };
 
