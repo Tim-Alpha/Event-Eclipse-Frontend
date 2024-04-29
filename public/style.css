@@ -18,7 +18,7 @@ body {
 .home_top_container {
     width: 100vw;
     height: 500px;
-    padding: 50px 0;
+    padding: 0 0 50px 0;
     background-color: #5302a8;
 }
 
@@ -78,6 +78,58 @@ body {
     bottom: 0;
 }
 
+.header_container {
+    width: 100%;
+    height: 50px;
+    top: 0;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header_logo_container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-right: 10px;
+}
+
+.header_btn_container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.login_btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    padding: 10px 30px;
+    text-decoration: none;
+  }
+  
+  .login_btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
 
 @media screen and (max-width: 500px) {
 
