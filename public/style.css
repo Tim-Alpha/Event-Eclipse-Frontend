@@ -19,6 +19,7 @@ body {
     width: 100vw;
     height: 500px;
     padding: 0 0 50px 0;
+    margin-left: -10px;
     background-color: #5302a8;
 }
 
@@ -115,9 +116,9 @@ body {
     border-radius: 8px;
     font-family: Arial;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
-    padding: 10px 30px;
+    padding: 5px 20px;
     text-decoration: none;
   }
   
@@ -135,6 +136,7 @@ body {
 
     .home_top_container {
         height: 100px;
+        margin-left: 0px;
     }
 
     .home_bottom_container {
