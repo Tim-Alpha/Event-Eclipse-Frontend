@@ -1,12 +1,13 @@
 import React from "react";
 import Container from "./Container";
 import Footer from "./Footer";
+import TopContainer from "./TopContainer";
 
 const Home = () => {
 
     return (
         <>
-            <div className="home_top_container"></div>
+            <TopContainer />
             <div className="home_bottom_container">
                 {/* <div className="slight_up" id="slight_up">
                     <Container newClass="small_box" width="30" height="30" background="green" corner="20" />
