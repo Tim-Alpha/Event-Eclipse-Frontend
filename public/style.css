@@ -18,7 +18,6 @@ body {
 .home_top_container {
     width: 100vw;
     height: 500px;
-    padding: 0 0 50px 0;
     margin-left: -10px;
     background-color: #5302a8;
 }
@@ -32,10 +31,12 @@ body {
 }
 
 .slight_up {
+    width: 100%;
+    height: 100%;
     display: flex;
     position: relative;
-    top: -150px;
     overflow-x: auto;
+    margin-right: 10px;
 
     /* Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
@@ -44,7 +45,7 @@ body {
 
     /* Hide scrollbar for IE, Edge, and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    scrollbar-width: none; /* Firefox */
 }
 
 .container {
@@ -54,9 +55,10 @@ body {
 }
 
 .container_image {
-    overflow: hidden;
+    object-fit: fill;
     width: 100%;
     height: 100%;
+    margin-right: 10px;
 }
 
 .small_box {
@@ -86,6 +88,8 @@ body {
 }
 
 .header_container {
+    position: fixed;
+    float: left;
     width: 100%;
     height: 50px;
     top: 0;
