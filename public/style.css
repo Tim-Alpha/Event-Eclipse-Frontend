@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: gray;
+    /* background-color: gray; */
     overflow-x: hidden;
 
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -19,7 +19,7 @@ body {
     width: 100vw;
     height: 500px;
     margin-left: -10px;
-    background-color: #5302a8;
+    /* background-color: #5302a8; */
 }
 
 .home_bottom_container {
@@ -49,7 +49,7 @@ body {
 }
 
 .container {
-    background: #008000;
+    /* background: #008000; */
     border-radius: 20px;
     flex-shrink: 0;
 }
