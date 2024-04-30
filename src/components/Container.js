@@ -15,7 +15,9 @@ const Container = (props) => {
         <div 
             className={`${props.newClass}`}
             style={getContainerStyles(props)}
-        ></div>
+        >
+            <img className="container_image" alt="test" src={props.link} />
+        </div>
     );
 };
 
