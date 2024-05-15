@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import img5 from "./images/img5.jpeg"
 import img6 from "./images/img6.jpeg"
 import img7 from "./images/img7.webp"
@@ -15,7 +14,6 @@ const TopContainer = () => {
                     <img className="container_image" alt="test" src={img8} />
                     <img className="container_image" alt="test" src={img5} />
                 </div>
-                <Header />
             </div>
         </>
     )
