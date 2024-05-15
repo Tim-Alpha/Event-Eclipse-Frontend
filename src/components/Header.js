@@ -43,7 +43,7 @@ const Header = () => {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <button className="btn btn-primary ms-2" onClick={onSignUp}>{loginBtn}</button>
+                        <button className="btn btn-outline-success ms-2" onClick={onSignUp}>{loginBtn}</button>
                     </div>
                 </nav>
             )}
