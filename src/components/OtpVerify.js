@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
 const OTPVerification = () => {
     const userData = JSON.parse(localStorage.getItem('userData'));
-    // console.log("LOCAL-STORAGE: ", userData)
     const mobileNumber = userData.data.user.mobile;
-    console.log(mobileNumber)
 
     const navigate = useNavigate();
 
@@ -17,8 +15,20 @@ const OTPVerification = () => {
         digit4: ""
     });
 
+    // Create refs for each input
+    const digit1Ref = useRef(null);
+    const digit2Ref = useRef(null);
+    const digit3Ref = useRef(null);
+    const digit4Ref = useRef(null);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
+        if (value.length === 1) {
+            const nextSibling = e.target.nextSibling;
+            if (nextSibling && nextSibling.type === "text") {
+                nextSibling.focus();
+            }
+        }
         setOtp(prevState => ({
             ...prevState,
             [name]: value
@@ -29,16 +39,13 @@ const OTPVerification = () => {
         e.preventDefault();
         try {
             const enteredOTP = `${otp.digit1}${otp.digit2}${otp.digit3}${otp.digit4}`;
-
-            // You can now send this enteredOTP to the backend for verification
             console.log("Entered OTP:", enteredOTP);
             const response = await axios.post("http://localhost:3001/api/v1/users/verify/number", {
                 number: mobileNumber,
                 otp: enteredOTP
             });
-
-            console.log("Registration Successful:", response.data);
-            navigate('/', { state: { userData: userData } })
+            console.log("Verification Successful:", response.data);
+            navigate('/');
         } catch (error) {
             console.error("Verification Failed:", error);
         }
@@ -58,16 +65,16 @@ const OTPVerification = () => {
                                     <div className="row">
                                         <div><p className="text-success">OTP sent to your registered mobile number: {mobileNumber}</p></div>
                                         <div className="col">
-                                            <input type="text" id="digit1" name="digit1" className="form-control text-center" value={otp.digit1} onChange={handleChange} maxLength="1" required />
+                                            <input type="text" id="digit1" name="digit1" ref={digit1Ref} className="form-control text-center" value={otp.digit1} onChange={handleChange} maxLength="1" required />
                                         </div>
                                         <div className="col">
-                                            <input type="text" id="digit2" name="digit2" className="form-control text-center" value={otp.digit2} onChange={handleChange} maxLength="1" required />
+                                            <input type="text" id="digit2" name="digit2" ref={digit2Ref} className="form-control text-center" value={otp.digit2} onChange={handleChange} maxLength="1" required />
                                         </div>
                                         <div className="col">
-                                            <input type="text" id="digit3" name="digit3" className="form-control text-center" value={otp.digit3} onChange={handleChange} maxLength="1" required />
+                                            <input type="text" id="digit3" name="digit3" ref={digit3Ref} className="form-control text-center" value={otp.digit3} onChange={handleChange} maxLength="1" required />
                                         </div>
                                         <div className="col">
-                                            <input type="text" id="digit4" name="digit4" className="form-control text-center" value={otp.digit4} onChange={handleChange} maxLength="1" required />
+                                            <input type="text" id="digit4" name="digit4" ref={digit4Ref} className="form-control text-center" value={otp.digit4} onChange={handleChange} maxLength="1" required />
                                         </div>
                                     </div>
                                     <div className="d-grid mt-3">
