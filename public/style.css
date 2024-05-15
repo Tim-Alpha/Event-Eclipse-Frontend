@@ -96,6 +96,7 @@ body {
     padding: 5px 0;
     display: flex;
     flex-direction: row;
+    background-color: #ddd;
     justify-content: space-evenly;
 }
 
