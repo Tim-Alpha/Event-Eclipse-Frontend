@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const OTPVerification = () => {
-    const location = useLocation();
-    const userData = location.state.userData;
-    const mobileNumber = "7027079286";
-
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    // console.log("LOCAL-STORAGE: ", userData)
+    const mobileNumber = userData.data.user.mobile;
     console.log(mobileNumber)
+
     const navigate = useNavigate();
 
     const [otp, setOtp] = useState({

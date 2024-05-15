@@ -31,8 +31,9 @@ const Registration = () => {
             const response = await axios.post("http://localhost:3001/api/v1/users", formData);
             console.log("Registration Successful:", response.data);
             // Reset form fields after successful registration if needed
+            localStorage.setItem('userData', JSON.stringify(response.data));
 
-            navigate('/user/verify', { state: { userData: formData } });
+            navigate('/user/verify');
 
             setFormData({
                 username: "",
