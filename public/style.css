@@ -18,7 +18,7 @@ body {
 .home_top_container {
     width: 100vw;
     height: 500px;
-    margin-left: -10px;
+    /* margin-left: -10px; */
     /* background-color: #5302a8; */
 }
 
@@ -143,11 +143,59 @@ body {
     text-decoration: none;
   }
 
-@media screen and (max-width: 500px) {
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    position: relative;
+    background-color: green;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    width: 300px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .create-account-btn {
+    background-color: white;
+    color: green;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .create-account-btn:hover {
+    background-color: #ddd;
+  }
+  
+  @media screen and (max-width: 500px) {
 
     .home_top_container {
         height: 200px;
-        margin-left: 0px;
+        padding-left: 10px;
     }
 
     .home_bottom_container {
@@ -161,4 +209,49 @@ body {
         max-height: 25vh;
         border-radius: 5px;
     }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .main_container {
+        padding-top: 70px; 
+        padding-bottom: 70px;
+    }
 }
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #282828;
+}
+
+.icon-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-list li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.icon-list li svg {
+    color: white;
+    cursor: pointer;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (min-width: 768px) {
+    .bottom-bar {
+        display: none;
+    }
+}
+
