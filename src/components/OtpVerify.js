@@ -39,7 +39,7 @@ const OTPVerification = () => {
     try {
       const enteredOTP = `${otp.digit1}${otp.digit2}${otp.digit3}${otp.digit4}`;
       console.log("Entered OTP:", enteredOTP);
-      const response = await axios.post("http://localhost:3001/api/v1/users/verify/number", {
+      const response = await axios.post("https://eventeclipsebackend.onrender.com/api/v1/users/verify/number", {
         number: mobileNumber,
         otp: enteredOTP
       });

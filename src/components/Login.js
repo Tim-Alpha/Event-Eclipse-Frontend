@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import apiFetch from '../helper/api';
+import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,10 +12,12 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await apiFetch('/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post('https://eventeclipsebackend.onrender.com/api/v1/users/login', { 
+        username: username, 
+        password: password 
       });
+
+      const data = response.data;
 
       if (data.status === 'success') {
         localStorage.setItem('token', data.token);

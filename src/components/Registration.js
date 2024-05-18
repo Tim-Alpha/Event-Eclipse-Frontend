@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import apiFetch from '../helper/api';
+import axios from 'axios';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -30,11 +30,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await apiFetch('/users', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-      });
-
+      const response = await axios.post('https://eventeclipsebackend.onrender.com/api/v1/users', formData);
       console.log("Registration Successful:", response.data);
       localStorage.setItem('userData', JSON.stringify({ mobile: formData.mobile }));
       navigate('/user/verify');
