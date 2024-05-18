@@ -218,7 +218,11 @@ body {
     
     .main_container {
         padding-top: 70px; 
-        padding-bottom: 70px;
+        padding-bottom: 120px;
+    }
+
+    .form-container-mb-100 {
+        margin-bottom: 100px;
     }
 }
 
