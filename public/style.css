@@ -28,6 +28,7 @@ footer, header, hgroup, menu, nav, section {
 
 /* Correct CSS to hide scrollbars across different browsers */
 body {
+    background-color: transparent;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
 }
@@ -61,7 +62,7 @@ table {
 /* CSS START FROM HERE */
 
 .home-page {
-    background-color: #0f172a;
+    background-color: transparent;
     width: 100%;
 }
 
