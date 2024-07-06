@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Registration from './components/Registration';
 import Chat from "./components/Chat";
 import History from "./components/History";
+import './Star.css'
 
 function App() {
   return (
