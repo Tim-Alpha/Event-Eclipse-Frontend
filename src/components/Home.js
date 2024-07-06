@@ -2,8 +2,8 @@ import React from 'react';
 // import Fireworks from './Fireworks';
 import Header from './Header';
 import StarField from '../StarField';
-import BlinkingStar from './BlinkingStar';
-import FireworksBackground from './FireworksBackground';
+import BlinkingStar from './animation/stars/BlinkingStar';
+import FireworksBackground from './animation/fireworks/FireworksBackground';
 
 const Home = () => {
 

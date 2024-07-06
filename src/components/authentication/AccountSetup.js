@@ -1,5 +1,5 @@
 import React from "react";
-import { isLoggedIn } from "../helper/auth";
+import { isLoggedIn } from "../../helper/auth";
 import Registration from "./Registration";
 import Login from '../components/Login';
 
