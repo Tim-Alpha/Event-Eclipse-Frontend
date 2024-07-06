@@ -1,5 +1,5 @@
 import React from 'react';
-import './Star.css';
+import '../../css/Star.css';
 
 const Star = ({ size, position, duration }) => {
   const style = {

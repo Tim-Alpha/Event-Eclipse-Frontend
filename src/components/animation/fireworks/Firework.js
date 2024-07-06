@@ -1,7 +1,7 @@
 // Firework.js
 import { random } from './utils';
-import launch from './sounds/launch.mp3'
-import explode from './sounds/explode.mp3'
+import launch from '../../sounds/launch.mp3'
+import explode from '../../sounds/explode.mp3'
 
 export class Firework {
   constructor(canvasWidth, canvasHeight, hasInteracted) {

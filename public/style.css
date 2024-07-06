@@ -78,6 +78,7 @@ table {
     font-size: 3rem;
     color: #fde047;
     margin: 0;
+    cursor: pointer;
 }
 
 .hero-text {

@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home';
 // import ProtectedRoute from './components/ProtectedRoute';
-import OTPVerification from './components/OtpVerify';
-import AccountSetup from './components/AccountSetup';
-import Login from './components/Login';
-import Registration from './components/Registration';
+import OTPVerification from './components/authentication/OtpVerify';
+import AccountSetup from './components/authentication/AccountSetup';
+import Login from './components/authentication/Login';
+import Registration from './components/authentication/Registration';
 import Chat from "./components/Chat";
 import History from "./components/History";
-import './Star.css'
+import './components/css/Star.css'
 
 function App() {
   return (

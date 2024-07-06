@@ -1,7 +1,7 @@
 import React from 'react';
 // import Fireworks from './Fireworks';
-import Header from './Header';
-import StarField from '../StarField';
+import Header from './header-footer/Header';
+import StarField from './animation/stars/StarField';
 import BlinkingStar from './animation/stars/BlinkingStar';
 import FireworksBackground from './animation/fireworks/FireworksBackground';
 
