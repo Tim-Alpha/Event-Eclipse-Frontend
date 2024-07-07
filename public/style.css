@@ -102,6 +102,10 @@ table {
 }
 
 @media (max-width: 767px) {
+    form {
+        width: 90% !important;
+    }
+
     .hero-section {
         min-height: 40vh;
     }
@@ -115,6 +119,12 @@ table {
     }
     .customer-section {
         min-height: 50vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px !important;
     }
 }
 
@@ -160,4 +170,8 @@ nav {
 }
 .logo-2{
     color: #fde047;
+}
+
+.disableMe {
+    display: none;
 }
