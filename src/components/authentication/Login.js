@@ -7,12 +7,12 @@ import log from "../assets/Log.json";
 import Lottie from 'lottie-react'; 
 import { FaUser, FaLock } from "react-icons/fa"; 
 import axios from 'axios'; 
- 
+
 const Login = () => { 
   const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState(''); 
   const navigate = useNavigate(); 
- 
+
   const handleLogin = async (e) => { 
     e.preventDefault(); 
     try { 
@@ -20,12 +20,11 @@ const Login = () => {
         username: username,  
         password: password  
       }); 
- 
+
       const data = response.data; 
- 
+
       if (data.status === 'success') { 
         localStorage.setItem('token', data.token); 
-        localStorage.setItem('user', JSON.stringify(data.user)); 
         alert('Login successful'); 
         navigate('/home'); 
       } else { 
@@ -36,7 +35,7 @@ const Login = () => {
       alert("Login Failed. Please try again."); 
     } 
   }; 
- 
+
   return ( 
     <> 
       <Header /> 
@@ -44,49 +43,49 @@ const Login = () => {
         <div style={{ width: "25%"}}> 
           <Lottie animationData={log}/> 
         </div> 
-      <div className="container"> 
-      <form onSubmit={handleLogin}> 
-        <h1>Login</h1> 
-          <div className="input-box"> 
-            <input 
-            type="text" 
-              placeholder="Username" 
-              id="username" 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
-              required 
-            /> 
-            <FaUser className='icon'/> 
-          </div> 
-          <div className="input-box"> 
-            <input 
-              type="password" 
-              placeholder='Password' 
-              id="password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              required 
-            /> 
-            <FaLock className='icon'/> 
-          </div> 
- 
-          <div className="remember"> 
-            <label><input type="checkbox"/>Remember me</label> 
-            <a href="#">Forgot Password?</a> 
-          </div> 
- 
-          <button type="submit"> Login </button> 
-        <div className="register-link"> 
-          <p onClick={() => navigate('/register')}> 
-            Don't have an account? Register here. 
-          </p> 
+        <div className="container"> 
+          <form onSubmit={handleLogin}> 
+            <h1>Login</h1> 
+            <div className="input-box"> 
+              <input 
+                type="text" 
+                placeholder="Username" 
+                id="username" 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
+                required 
+              /> 
+              <FaUser className='icon'/> 
+            </div> 
+            <div className="input-box"> 
+              <input 
+                type="password" 
+                placeholder='Password' 
+                id="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                required 
+              /> 
+              <FaLock className='icon'/> 
+            </div> 
+
+            <div className="remember"> 
+              <label><input type="checkbox"/>Remember me</label> 
+              <p type="button" className="forgot-password" onClick={() => navigate('/forgot-password')}>Forgot Password?</p> 
+            </div> 
+
+            <button type="submit"> Login </button> 
+            <div className="register-link"> 
+              <p onClick={() => navigate('/register')}> 
+                Don't have an account? Register here. 
+              </p> 
+            </div> 
+          </form> 
         </div> 
-        </form> 
-      </div> 
-      {/* <Footer /> */} 
+        {/* <Footer /> */} 
       </div> 
     </> 
   ); 
 }; 
- 
+
 export default Login;

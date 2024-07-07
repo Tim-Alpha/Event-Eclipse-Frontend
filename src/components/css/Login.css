@@ -96,3 +96,17 @@
 .register-link p a:hover{ 
     text-decoration: underline; 
 }
+
+.forgot-password {
+    background: none;
+    border: none;
+    color: #ef4444;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .forgot-password:hover {
+    color: #ef4444;
+  }
+  
