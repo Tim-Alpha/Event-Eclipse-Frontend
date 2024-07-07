@@ -1,13 +1,17 @@
 // FireworksBackground.js
 import React, { useEffect, useRef, useState } from 'react';
 import { Firework } from './Firework';
+import IsMobile from '../../../helper/mobileDetection';
 
 const FireworksBackground = () => {
+  const mobile = IsMobile();
+  const [isMobile, setIsMobile] = useState(mobile);
   const canvasRef = useRef(null);
   const fireworks = useRef([]);
   const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
+    setIsMobile(mobile);
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -51,7 +55,7 @@ const FireworksBackground = () => {
       document.removeEventListener('click', handleInteraction);
       document.removeEventListener('keydown', handleInteraction);
     };
-  }, [hasInteracted]);
+  }, [mobile, hasInteracted]);
 
   return (
     <canvas 
@@ -61,7 +65,7 @@ const FireworksBackground = () => {
         top: 0, 
         left: 0, 
         width: '100%', 
-        height: '100vh', 
+        height: isMobile ? '40vh' : '100vh', 
         pointerEvents: 'none', 
         zIndex: -1 
       }} 
