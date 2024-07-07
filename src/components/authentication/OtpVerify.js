@@ -1,12 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
 const OTPVerification = () => {
-  const userData = JSON.parse(localStorage.getItem('userData'));
-  const mobileNumber = userData.mobile;
-
   const navigate = useNavigate();
+
+  const [userData, setUserData] = useState(() => JSON.parse(localStorage.getItem('userData')));
+  const [mobileNumber, setMobileNumber] = useState(userData?.mobile);
+
+  useEffect(() => {
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+    setUserData(storedUserData);
+    setMobileNumber(storedUserData?.mobile);
+    if (!storedUserData || !storedUserData.mobile) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const [otp, setOtp] = useState({
     digit1: "",
@@ -23,7 +32,7 @@ const OTPVerification = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (value.length === 1) {
-      const nextSibling = e.target.nextSibling;
+      const nextSibling = e.target.nextElementSibling;
       if (nextSibling && nextSibling.type === "text") {
         nextSibling.focus();
       }
@@ -39,6 +48,7 @@ const OTPVerification = () => {
     try {
       const enteredOTP = `${otp.digit1}${otp.digit2}${otp.digit3}${otp.digit4}`;
       console.log("Entered OTP:", enteredOTP);
+      
       const response = await axios.post("https://eventeclipsebackend.onrender.com/api/v1/users/verify/number", {
         number: mobileNumber,
         otp: enteredOTP
@@ -50,6 +60,10 @@ const OTPVerification = () => {
       console.error("Verification Failed:", error);
     }
   };
+
+  if (!mobileNumber) {
+    return null;
+  }
 
   return (
     <div className="container mt-5">
