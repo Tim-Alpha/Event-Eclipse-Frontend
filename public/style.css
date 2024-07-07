@@ -74,6 +74,50 @@ table {
     min-height: 100vh;
 }
 
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: purple;
+}
+
+.service-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: blue;
+}
+
+.customer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(211, 46, 46, 0.993);
+}
+
+@media (max-width: 700px) {
+    .hero-section {
+        min-height: 40vh;
+    }
+
+    .about-section {
+        min-height: 50vh;
+    }
+
+    .service-section {
+        min-height: 50vh;
+    }
+    .customer-section {
+        min-height: 50vh;
+    }
+}
+
 .hero-heading {
     font-size: 3rem;
     color: #fde047;
@@ -81,8 +125,18 @@ table {
     cursor: pointer;
 }
 
+.hero-main-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    max-width: 800px;
+}
+
 .hero-text {
     color: #cbd5e1;
+    text-align: center;
 }
 
 nav {
@@ -95,6 +149,7 @@ nav {
     display: flex;
     align-items: center;
     padding: 0 20px;
+    opacity: 0.8;
 }
 .logo{
     font-size: 1.5rem;
