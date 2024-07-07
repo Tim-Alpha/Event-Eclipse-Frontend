@@ -1,13 +1,13 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router'; 
-// import Footer from '../header-footer/Footer'; 
 import Header from '../header-footer/Header'; 
 import "../css/Registration.css"; 
 import log from "../assets/Log.json"; 
 import Lottie from 'lottie-react'; 
 import axios from 'axios'; 
-import { FaUser, FaLock, FaEnvelope, FaCalendarAlt, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'; 
- 
+import { FaUser, FaEyeSlash, FaEye, FaLock, FaEnvelope, FaCalendarAlt, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'; 
+import IsMobile from '../../helper/mobileDetection';
+
 const Registration = () => { 
   const [formData, setFormData] = useState({ 
     username: "", 
@@ -19,10 +19,16 @@ const Registration = () => {
     dob: "", 
     address: "", 
     mobile: "" 
-  }); 
- 
+  });
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [disableClass, setDisableClass] = useState("");
+  const isMobile = IsMobile();
   const navigate = useNavigate(); 
- 
+
+  useEffect(() => {
+    isMobile ? setDisableClass('disableMe') : setDisableClass("");
+  }, [isMobile]);
+
   const handleChange = (e) => { 
     const { name, value } = e.target; 
     setFormData(prevState => ({ 
@@ -48,7 +54,7 @@ const Registration = () => {
     <> 
       <Header /> 
       <div className='main'> 
-        <div className="wrapper"> 
+        <div className="container">
           <form onSubmit={handleSubmit}> 
             <h1>Sign Up</h1> 
             <div className="input-box"> 
@@ -57,7 +63,16 @@ const Registration = () => {
             </div> 
             <div className="input-box"> 
               <FaLock className="icon" /> 
-              <input type="password" placeholder="Password" id="password" name="password" value={formData.password} onChange={handleChange} required /> 
+              <input type={passwordVisible ? "text" : "password"} placeholder="Password" id="password" name="password" value={formData.password} onChange={handleChange} required />
+              {formData.password === "" ? (
+                <FaLock className='icon'/>
+              ) : (
+                passwordVisible ? (
+                  <FaEyeSlash className='icon' onClick={() => setPasswordVisible(false)} />
+                ) : (
+                  <FaEye className='icon' onClick={() => setPasswordVisible(true)} />
+                )
+              )}
             </div> 
             <div className="input-box"> 
               <FaUser className="icon" /> 
@@ -90,15 +105,15 @@ const Registration = () => {
             <button type="submit"> Register </button> 
             <div className="login-link"> 
               <p onClick={() => navigate('/login')}> 
-                Already have an account? Login here. 
+                Already have an account? <span className='registerHere'>Login here</span>. 
               </p> 
             </div> 
-          </form> 
-        </div> 
-        <div className="lottie-container"> 
-          <Lottie animationData={log} />
-          </div> 
-      </div> 
+          </form>
+          <div className={`animatedSvg ${disableClass}`}>
+            <Lottie className={disableClass} animationData={log}/>
+          </div>
+          </div>
+        </div>
     </> 
   ); 
 }; 
