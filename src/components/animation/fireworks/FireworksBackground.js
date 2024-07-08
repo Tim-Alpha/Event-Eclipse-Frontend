@@ -42,7 +42,7 @@ const FireworksBackground = () => {
     animate();
 
     const handleInteraction = () => {
-      setHasInteracted(false); // Did intentionally, to pause cracker sound
+      setHasInteracted(true); // Did intentionally, to pause cracker sound
       document.removeEventListener('click', handleInteraction);
       document.removeEventListener('keydown', handleInteraction);
     };
