@@ -1,0 +1,27 @@
+h1, p { 
+    text-align: center; 
+    margin-bottom: 20px; 
+} 
+ 
+.input-group { 
+    display: flex; 
+    justify-content: space-between; 
+    height: 45px; 
+} 
+ 
+.input-group input { 
+    width: 20%; 
+    text-align: center; 
+} 
+.d-grid { 
+    margin-top: 20px; 
+} 
+ 
+.btn-primary { 
+    width: 100%; 
+}
+
+.container-verify {
+    /* font-size: 50px; */
+    color: white;
+}
