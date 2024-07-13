@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header-footer/Header';
 import StarField from './animation/stars/StarField';
 import BlinkingStar from './animation/stars/BlinkingStar';
-import FireworksBackground from './animation/fireworks/FireworksBackground';
+// import FireworksBackground from './animation/fireworks/FireworksBackground';
 import Footer from './header-footer/Footer';
 import WhyWe from './images/whyWe.png';
 import './css/Home.css';
@@ -15,7 +15,7 @@ const Home = () => {
     <div className='home-page'>
       <StarField />
       <BlinkingStar />
-      <FireworksBackground />
+      {/* <FireworksBackground /> */}
       <div className='hero-section' >
         <div className='hero-main-heading'>
           <h1 className='hero-heading' >Event Eclipse</h1>
